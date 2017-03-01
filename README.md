@@ -45,7 +45,7 @@ Anyone with basic javascript understanding can use this library by downloading t
 
 [`$d.ajax`](#lajax)  
 
-### $l
+### $d
 
 The DOMinator library utilizes the global variable of `$d` as a wrapper for all of the methods in the DOMinator library.  
 
