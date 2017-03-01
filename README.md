@@ -116,7 +116,7 @@ Adds event listener to each `DOMNodeCollection` element.  List of events are ava
 
 Removes event listener from each `DOMNodeCollection` element.
 
-### $l.ajax
+### $d.ajax
 
 Sends HTTP Requests.  Accepts a `Hash` object as an argument with any of the following attributes:
   * method (default: "GET"): HTTP Request method or type
