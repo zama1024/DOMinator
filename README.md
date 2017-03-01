@@ -51,7 +51,7 @@ The DOMinator library utilizes the global variable of `$d` as a wrapper for all 
 
 `$d` is most commonly used to select elements with CSS selectors.  `$d("div")` returns a `DOMNodeCollection` object which is an object custom to the DOMinator library that is an array of `HTMLElement`s.  
 
-`$d` can also be used to create `DOMNodeCollection` objects from unwrapped `HTMLElement`s giving these elements access to DOMDOMDOM methods.  
+`$d` can also be used to create `DOMNodeCollection` objects from unwrapped `HTMLElement`s giving these elements access to DOMinator methods.  
 
 The third use of `$d` takes in a string of HTML code, builds `HTMLElement`(s) from the code, and then wraps the `HTMLElement`(s) in a `DOMNodeCollection` object.
 
