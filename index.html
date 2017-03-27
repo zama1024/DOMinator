@@ -32,7 +32,7 @@
             <div class="headerbox">
               <h3>EventListener On</h3>
             </div>
-            <span>Click here to turn on a click handle listener on the red button</span>
+            <span>Click here to turn on a mouseover listener on the red button</span>
             </br>
             <button id="on" class="ajax">Enable EventListener</button>
           </div>
@@ -40,7 +40,7 @@
             <div class="headerbox">
               <h3>EventListener Off</h3>
             </div>
-            <span>Click here to turn off the click handle listener</span>
+            <span>Click here to turn off the mouseover listener</span>
             </br>
             <button id="off" class="ajax">Disable Event Listener</button>
           </div>
@@ -129,16 +129,20 @@
         })
       })
       $d('#html1').on("click",  () => {
+        $d('#insideframe').attr("style", "background: white")
         $d('#insideframe').html(`<h2>Hi! I am an h2 element and I was put here using the DOMinator html method.</h2>`)
       })
       $d('#append').on("click",  () => {
+        $d('#insideframe').attr("style", "background: white")
         $d('#insideframe').append(`<img src="./assets/emoji.jpg" style="width:50px;height:50px"></img>`)
       })
       $d('#attr').on("click",  () => {
+        $d('#insideframe').attr("style", "background: white")
         $d('#insideframe').html(`<h2>Hi! I used the DOMinator attr method to give myself a red background.</h2>`)
         $d('#insideframe').attr("style", "background: red")
       })
       $d('#addclass').on("click",  () => {
+        $d('#insideframe').attr("style", "background: white")
         $d('#insideframe').html(`<button id="ballbutton">Click me to add a class to the ball</button>`)
         $d('#insideframe').append(`<div id="demoball" style="border-radius:50%;width: 100px; height: 100px; background-color: red; position: relative;"></div>`)
         $d('#ballbutton').on("click", () => {
