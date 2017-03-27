@@ -10,7 +10,7 @@ DOMinator is a jQuery inspired javascript library for DOM manipulation. Using DO
 
 ## Getting Started
 
-Anyone with basic javascript understanding can use this library by downloading this repo into their project and including the webpack output `dominator.js` in the source code.
+Anyone with basic javascript understanding can use this library by downloading this repo into their project and including the webpack output `dominator.js` in the source code. To update or make changes in the library, user can run the command "webpack --watch" from their terminal and that will continuously watch for changes in the source code.
 
 ```html
 <head>
@@ -85,6 +85,33 @@ Empties the innerHTML of each `DOMNodeCollection` element
 
 Takes a single `HTMLElement`, `DOMNodeCollection`, or `string` argument and appends it to each `DOMNodeCollection` element.
 
+```javascript
+  append(arg){
+    if (this.HTMLElements.length === 0) {
+      return;
+    }
+
+    if(typeof arg === 'object' && !(arg instanceof DOMNodeCollection)){
+      arg = $d(arg);
+    }
+
+    if(typeof arg === 'string') {
+      this.HTMLElements.forEach(htmlElement => {
+        htmlElement.innerHTML += arg;
+      });
+    }
+
+    if ( arg instanceof DOMNodeCollection ) {
+      this.HTMLElements.forEach(htmlElement => {
+        arg.HTMLElements.forEach( child => {
+          htmlElement.appendChild(child);
+        });
+      });
+    }
+    return this;
+  }
+```
+
 #### `remove`
 
 Remove each `DOMNodeCollection` element from the DOM.
@@ -124,3 +151,30 @@ Sends HTTP Requests.  Accepts a `Hash` object as an argument with any of the fol
   * success: success callback
   * error: error callback
   * contentType (default: 'application/x-www-form-urlencoded; charset=UTF-8'): content type of HTTP Request
+
+```javascript
+$d.ajax = (options) => {
+  const defaults = {
+    method: 'GET',
+    url: "",
+    success: () => {},
+    error: console.log,
+    data: {},
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+  };
+
+  options = $d.extend(defaults, options);
+  const xhr = new XMLHttpRequest();
+  xhr.open(options.method, options.url);
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      options.success(xhr.response);
+    }
+    else {
+      options.error(xhr.response);
+    }
+  };
+
+  xhr.send(JSON.stringify(options.data));
+};
+```
