@@ -2,19 +2,114 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="lib/dominator.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Exo|Gochi+Hand|Monoton" rel="stylesheet">
+      <link rel="stylesheet" href="assets/stylesheets/main.css">
+    <script type="text/javascript" src="dominator.js"></script>
     <meta charset="utf-8">
-    <title></title>
+    <title>DOMinator</title>
   </head>
   <body>
-    <div class="">
-      <h1>Test file for DOMinator</h1>
-      <ul>
-        <li>Test element 1</li>
-        <li>Test element 2</li>
-        <li>Test element 3</li>
-      </ul>
-      <a href="https://www.carebnb.site">Visit carebnb.site!</a>
+    <div class="header">
+      <div class="logo">
+        <img src="logo.gif"></img>
+      </div>
+      <div class="des">
+        <h3>DOMinator is a jQuery inspired JavaScript library for DOM manipulation.</h3>
+      </div>
     </div>
+    <div id="page">
+      <div id="lhs">
+        <div class="methods">
+          <div class="box">
+            <div class="headerbox">
+              <h3>AJAX</h3>
+            </div>
+            <span>Click here to make an AJAX call to the Giphy API and receive a funny cat GIF response</span>
+            </br>
+            <button id="ajax" class="ajax">AJAX Request</button>
+          </div>
+          <div class="box">
+            <div class="headerbox">
+              <h3>EventListener On</h3>
+            </div>
+            <span>Click here to turn on a click handle listener on the red button</span>
+            </br>
+            <button id="on" class="ajax">Enable EventListener</button>
+          </div>
+          <div class="box">
+            <div class="headerbox">
+              <h3>EventListener Off</h3>
+            </div>
+            <span>Click here to turn off the click handle listener</span>
+            </br>
+            <button id="off" class="ajax">Disable Event Listener</button>
+          </div>
+          <div class="box">
+            <div class="headerbox">
+              <h3>html</h3>
+            </div>
+            <span>Click here to insert an html element(h2 in this case) on the window.</span>
+            </br>
+            <button id="html1" class="ajax">HTML</button>
+          </div>
+          <div class="box">
+            <div class="headerbox">
+              <h3>Append</h3>
+            </div>
+            <span>Click here to append emojis on the window</span>
+            </br>
+            <button id="append" class="ajax">Append</button>
+          </div>
+        </div>
+      </div>
+      <div id="rhs">
+        <div id="actionbox">
+          <h1>Demo Center</h1>
+          <img id="frame" src="./assets/frame.png"></img>
+          <div id="insideframe">
+          </div>
+        </div>
+        <div id="codebox">
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function getRandomColor () {
+        var hex = Math.floor(Math.random() * 0xFFFFFF);
+        return "#" + ("000000" + hex.toString(16)).substr(-6);
+      }
+      $d('#ajax').on("click",  () => {
+        $d.ajax({
+          url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=funny+cat",
+          success: (data) => {
+
+            const imageUrl = JSON.parse(data).data.fixed_height_downsampled_url
+            $d('#insideframe').attr("style",`background: white`)
+            $d('#insideframe').html(`<img src=${imageUrl}>`)
+          }
+        })
+      })
+      $d('#on').on("click",  () => {
+        $d('#insideframe').html(`<h2>Turned on mouse hover event listening on this box. Please hover over this box multiple times to see the results.</h2>`)
+        $d('#insideframe').on('mouseenter', () => {
+          a = getRandomColor();
+          $d('#insideframe').attr("style",`background: ${a}`)
+        })
+      })
+      $d('#off').on("click",  () => {
+        $d('#insideframe').html(`<h2>Turned off mouse hover event listening on this box.</h2>`)
+        $d('#insideframe').attr("style",`background: white`)
+        $d('#insideframe').off('mouseenter', () => {
+          a = getRandomColor();
+          $d('#insideframe').attr("style",`background: ${a}`)
+        })
+      })
+      $d('#html1').on("click",  () => {
+        $d('#insideframe').html(`<h2>Hi! I am an h2 element and I was put here using the DOMinator html method.</h2>`)
+      })
+      $d('#append').on("click",  () => {
+        $d('#insideframe').append(`<img src="./assets/emoji.jpg" style="width:50px;height:50px"></img>`)
+      })
+    </script>
   </body>
 </html>
