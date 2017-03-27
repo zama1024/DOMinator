@@ -1,7 +1,6 @@
 # DOMinator
-### [Live DOMinator](https://farshidzaman.tech/DOMinator/)
-![screenshot]
-[screenshot]: ./assets/dominator.png
+### [Live DOMinator](http://www.farshidzaman.tech/DOMinator/)
+![screenshot](./assets/dominator.png)
 
 DOMinator is a jQuery inspired javascript library for DOM manipulation. Using DOMinator, users can:
   * Select single or multiple DOM elements
