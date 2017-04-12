@@ -28,7 +28,7 @@ Anyone with basic javascript understanding can use this library by downloading t
 [`$d`](#l)  
 
 [DOM Traversal](#dom-traversal)  
-  * [`children`](#children)  
+  * [`children`](#)  
   * [`parent`](#parent)  
 
 [DOM Manipulation](#dom-manipulation)  
