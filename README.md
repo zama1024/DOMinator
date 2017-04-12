@@ -36,7 +36,7 @@ Anyone with basic javascript understanding can use this library by downloading t
   * [`empty`](#empty)  
   * [`append`](#append)  
   * [`remove`](#remove)  
-  * [`attr`](#attr)  
+  * [`attr`](#)  
   * [`addClass`](#addclass)  
   * [`removeClass`](#removeclass)  
   * [`toggleClass`](#toggleclass)  
