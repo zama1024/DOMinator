@@ -14,7 +14,7 @@ DOMinator is a jQuery inspired javascript library for DOM manipulation. Using DO
 
 Anyone with basic javascript understanding can use this library by downloading this repo into their project and including the webpack output `dominator.js` in the source code. To update or make changes in the library, user can run the command "webpack --watch" from their terminal and that will continuously watch for changes in the source code.
 
-```html
+```htm
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="./css/reset.css">
