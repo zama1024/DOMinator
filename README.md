@@ -1,4 +1,4 @@
-# DOMinator
+# Dominator
 ### [Live DOMinator](http://www.farshidzaman.tech/DOMinator/)
 ![screenshot](./assets/dominator.png)
 
