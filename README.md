@@ -116,7 +116,7 @@ Takes a single `HTMLElement`, `DOMNodeCollection`, or `string` argument and appe
 
 #### `remove`
 
-Remove each `DOMNodeCollection` element from the DOM.
+Removes each `DOMNodeCollection` element from the DOM.
 
 #### `attr`
 
