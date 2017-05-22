@@ -57,7 +57,7 @@ The DOMinator library utilizes the global variable of `$d` as a wrapper for all 
 
 The third use of `$d` takes in a string of HTML code, builds `HTMLElement`(s) from the code, and then wraps the `HTMLElement`(s) in a `DOMNodeCollection` object.
 
-The final use of `$l` is as tool to queue functions to run once the DOM is fully loaded.
+The final use of `$l` is as a tool to queue functions to run once the DOM is fully loaded.
 
 
 ### DOM Traversal
