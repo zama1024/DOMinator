@@ -4,7 +4,7 @@
 
 DOMinator is a jQuery inspired JavaScript library for DOM manipulation. Using DOMinator, users can:
   * Select single or multiple DOM elements
-  * Traverse and manipulate DOM elements
+  * Traverse and manipulate DOM element
   * Build DOM elements
   * Create `DOMNodeCollection` objects from `HTMLElement`s
   * Queue functions until DOM is fully loaded
